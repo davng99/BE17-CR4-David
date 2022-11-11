@@ -19,10 +19,10 @@ if ($_POST) {
     //variable for upload pictures errors is initialised
     $uploadError = '';
  
-    $picture = file_upload($_FILES['image']);//file_upload() called  
+    $picture = file_upload($_FILES['picture']);//file_upload() called  
  
     if($picture->error===0){
-        ($_POST["image"]=="books.jpg")?: unlink("../pictures/$_POST[image]");          
+        ($_POST["picture"]=="books.jpg")?: unlink("../pictures/$_POST[picture]");          
         $sql = "UPDATE media SET title = '$title', image = '$picture->fileName', ISBN_code = '$isbn', short_description = '$description', type = '$type', author_first_name = '$authorfname', author_last_name = '$authorlname', publisher_name = '$publisher', publisher_address = '$publisheraddress', publish_date = '$publishdate', status = '$status' WHERE id = {$id}";
     }else{
         $sql = "UPDATE media SET title = '$title', ISBN_code = '$isbn', short_description = '$description', type = '$type', author_first_name = '$authorfname', author_last_name = '$authorlname', publisher_name = '$publisher', publisher_address = '$publisheraddress', publish_date = '$publishdate', status = '$status' WHERE id = {$id}";
