@@ -19,6 +19,7 @@
             $publisher = $data['publisher_name'];
             $publisheraddress = $data['publisher_address'];
             $publishdate = $data['publish_date'];
+            $status = $data['status'];
         } else {
             header("location: error.php");
         }
@@ -90,6 +91,10 @@
                    <tr>
                        <th>Publish Date</th>
                        <td><input class='form-control' type="text" name="publishdate"  placeholder="Publish Date" value="<?php echo $publishdate ?>"/></td>
+                   </tr> 
+                   <tr>
+                       <th>Status</th>
+                       <td><input class='form-control' type="text" name="status"  placeholder="Status" value="<?php echo $status ?>"/></td>
                    </tr> 
                    <tr>
                        <input type= "hidden" name= "id" value= "<?php echo $data['id'] ?>" />

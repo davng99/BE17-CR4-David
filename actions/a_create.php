@@ -12,11 +12,12 @@
         $publisher = $_POST['publisher'];
         $publisheraddress = $_POST['publisheraddress'];
         $publishdate = $_POST['publishdate'];
+        $status = $_POST['status'];
         $uploadError = '';
 
         $picture = file_upload($_FILES['image']);
 
-        $sql = "INSERT INTO media (`title`, `image`, `ISBN_code`, `short_description`, `type`, `author_first_name`, `author_last_name`, `publisher_name`, `publisher_address`, `publish_date`) VALUES ('$title','$picture->fileName', '$isbn', '$description', '$type', '$authorfname', '$authorlname', '$publisher', '$publisheraddress', '$publishdate')";
+        $sql = "INSERT INTO media (`title`, `image`, `ISBN_code`, `short_description`, `type`, `author_first_name`, `author_last_name`, `publisher_name`, `publisher_address`, `publish_date`, `status`) VALUES ('$title','$picture->fileName', '$isbn', '$description', '$type', '$authorfname', '$authorlname', '$publisher', '$publisheraddress', '$publishdate', '$status')";
 
         if (mysqli_query($connect, $sql) === true) {
             $class = "success";
@@ -31,6 +32,7 @@
                  <tr><td>Publisher: $publisher </td></tr>
                  <tr><td>Publisher Address: $publisheraddress </td></tr>
                  <tr><td>Publishdate: $publishdate </td></tr>
+                 <tr><td>Status: $status </td></tr>
                  </table><hr>";
             $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
         } else {

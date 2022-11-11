@@ -24,7 +24,7 @@
                    </tr>   
                    <tr>
                        <th>ISBN</th>
-                       <td><input class='form-control' type="text" name= "isbn" placeholder="ISBN" /></td>
+                       <td><input class='form-control' type="text" name= "isbn" placeholder="ISBN (13 digits maximum)" /></td>
                    </tr>
                    <tr>
                        <th>Image</th>
@@ -57,6 +57,10 @@
                    <tr>
                        <th>Publish Date</th>
                        <td><input class='form-control' type="text" name="publishdate"  placeholder="Publish Date" /></td>
+                   </tr> 
+                   <tr>
+                       <th>Status</th>
+                       <td><input class='form-control' type="text" name="status"  placeholder="Status" /></td>
                    </tr> 
                    <tr>
                        <td><button class='btn btn-success' type="submit">Insert Media</button></td>

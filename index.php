@@ -13,17 +13,19 @@ if (mysqli_num_rows($result)  > 0) {
            <td class='text-center'>" . $row['ISBN_code'] . "</td>
            <td class='text-center'>" . $row['short_description'] . "</td>
            <td class='text-center'>" . $row['type'] . "</td>
-           <td class='text-center'>" . $row['author_first_name'] . "</td>
-           <td class='text-center'>" . $row['author_last_name'] . "</td>
-           <td class='text-center'>" . $row['publisher_name'] . "</td>
+
+           <td class='text-center'><a href='publisher.php?publisher=". $row['publisher_name'] ."'>" . $row['publisher_name'] . "</a></td>
            <td class='text-center'>" . $row['publisher_address'] . "</td>
            <td class='text-center'>" . $row['publish_date'] . "</td>
-           <td class='text-center'><a href='update.php?id=" . $row['id'] . "'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+           
+           <td class='text-center'>
+           <a href='details.php?id=" . $row['id'] . "'><button class='btn btn-primary btn-sm' type='button'> Show Details</button></a>
+           <a href='update.php?id=" . $row['id'] . "'><button class='btn btn-success btn-sm' type='button'>Edit</button></a>
            <a href='delete.php?id=" . $row['id'] . "'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
             </tr>";
     };
 } else {
-    $tbody =  "<tr><td colspan='11'><center>No Data Available </center></td></tr>";
+    $tbody =  "<tr><td colspan='9'><center>No Data Available </center></td></tr>";
 }
 
 mysqli_close($connect);
@@ -66,7 +68,7 @@ mysqli_close($connect);
 
             <a href="create.php"><button class='btn btn-primary' type="button">Add media</button></a>
         </div>
-        <p class='h2'>Media</p>
+        <p class='h2'>Media library</p>
 
         <table class='table table-striped'>
             <thead class='table-success'>
@@ -76,11 +78,12 @@ mysqli_close($connect);
                     <th>ISBN</th>
                     <th>Description</th>
                     <th>Type</th>
-                    <th>Author_first_name</th>
-                    <th>Author_last_name</th>
+                    <!-- <th>Author_first_name</th>
+                    <th>Author_last_name</th> -->
                     <th>Publisher_name</th>
                     <th>Publisher_address</th>
                     <th>Publish_date</th>
+                    <!-- <th>Status</th> -->
                     <th>Action</th>
                 </tr>
             </thead>

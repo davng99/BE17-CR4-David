@@ -13,6 +13,7 @@ if ($_POST) {
     $publisher = $_POST['publisher'];
     $publisheraddress = $_POST['publisheraddress'];
     $publishdate = $_POST['publishdate'];
+    $status = $_POST['status'];
     $id = $_POST['id'];
     
     //variable for upload pictures errors is initialised
@@ -22,9 +23,9 @@ if ($_POST) {
  
     if($picture->error===0){
         ($_POST["image"]=="books.png")?: unlink("../pictures/$_POST[image]");          
-        $sql = "UPDATE media SET title = '$title', image = '$picture->fileName', ISBN_code = '$isbn', short_description = '$description', type = '$type', author_first_name = '$authorfname', author_last_name = '$authorlname', publisher_name = '$publisher', publisher_address = '$publisheraddress', publish_date = '$publishdate' WHERE id = {$id}";
+        $sql = "UPDATE media SET title = '$title', image = '$picture->fileName', ISBN_code = '$isbn', short_description = '$description', type = '$type', author_first_name = '$authorfname', author_last_name = '$authorlname', publisher_name = '$publisher', publisher_address = '$publisheraddress', publish_date = '$publishdate', status = '$status' WHERE id = {$id}";
     }else{
-        $sql = "UPDATE media SET title = '$title', ISBN_code = '$isbn', short_description = '$description', type = '$type', author_first_name = '$authorfname', author_last_name = '$authorlname', publisher_name = '$publisher', publisher_address = '$publisheraddress', publish_date = '$publishdate' WHERE id = {$id}";
+        $sql = "UPDATE media SET title = '$title', ISBN_code = '$isbn', short_description = '$description', type = '$type', author_first_name = '$authorfname', author_last_name = '$authorlname', publisher_name = '$publisher', publisher_address = '$publisheraddress', publish_date = '$publishdate', status = '$status' WHERE id = {$id}";
     }   
 
     if (mysqli_query($connect, $sql) === TRUE) {
