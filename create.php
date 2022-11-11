@@ -4,7 +4,7 @@
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <?php require_once 'components/boot.php'?>
-       <title>PHP CRUD  |  Add Media</title>
+       <title>Add Media</title>
        <style>
            fieldset {
                margin: auto;
