@@ -15,10 +15,13 @@ if (mysqli_num_rows($result) > 0) {
             <td class='text-center'>" . $row['ISBN_code'] . "</td>
             <td class='text-center'>" . $row['short_description'] . "</td>
             <td class='text-center'>" . $row['type'] . "</td>
+            <td class='text-center'>" . $row['author_first_name'] . "</td>
+            <td class='text-center'>" . $row['author_last_name'] . "</td>
             <td class='text-center'>" . $row['publisher_name'] . "</td>
             <td class='text-center'>" . $row['publisher_address'] . "</td>
             <td class='text-center'>" . $row['publish_date'] . "</td>
-            </tr>";
+            <td class='text-center'>" . $row['status'] . "</td>
+        </tr>";
     }
 } else {
     $tbody =  "<tr><td colspan='9'><center>No Data Available </center></td></tr>";
@@ -72,9 +75,12 @@ mysqli_close($connect);
                     <th>ISBN</th>
                     <th>Description</th>
                     <th>Type</th>
+                    <th>Author_first_name</th>
+                    <th>Author_last_name</th>
                     <th>Publisher_name</th>
                     <th>Publisher_address</th>
                     <th>Publish_date</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
