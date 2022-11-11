@@ -18,6 +18,7 @@ if ($_GET['id']) {
         $publisher = $data['publisher_name'];
         $publisheraddress = $data['publisher_address'];
         $publishdate = $data['publish_date'];
+        $status = $data['status'];
 
     } else {
         header("location: error.php");
@@ -81,6 +82,9 @@ if ($_GET['id']) {
             </tr>
             <tr>
                 <td><?php echo "Publish Date: " . $publishdate ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Status: " . $status ?></td>
             </tr>
         </table>
 
