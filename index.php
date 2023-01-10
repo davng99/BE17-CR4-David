@@ -35,9 +35,9 @@ if (mysqli_num_rows($result)  > 0) {
            <td class='text-center'>" . $row['publish_date'] . "</td>
            <td class='text-center'>" . $row['status'] . "</td>
            <td class='text-center'>
-           <a href='details.php?id=" . $row['id'] . "'><button class='btn btn-primary btn-sm' type='button'>Show Details</button></a>
-           <a href='update.php?id=" . $row['id'] . "'><button class='btn btn-success btn-sm' type='button'>Edit</button></a>
-           <a href='delete.php?id=" . $row['id'] . "'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
+           <a href='details.php?id=" . $row['id'] . "'><button style='width: 100%;' class='btn btn-primary btn-sm' type='button'>Show Details</button></a>
+           <a href='update.php?id=" . $row['id'] . "'><button style='width: 100%;' class='btn btn-success btn-sm' type='button'>Edit</button></a>
+           <a href='delete.php?id=" . $row['id'] . "'><button style='width: 100%;' class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
             </tr>";
     };
 } else {
